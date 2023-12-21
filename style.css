@@ -95,7 +95,7 @@ header .icons .fa-search {
 /*============== Info ==============*/
 
 /* info section  */
-.info {
+body > .info {
   padding: var(--padding);
 }
 
@@ -141,7 +141,7 @@ header .icons .fa-search {
 }
 
 /* 엑션 버튼 (좋아요,나빠요,공유하기 등등)*/
-.actions {
+.info .actions {
   display: flex;
   /* 아이템들의 “둘레(around)”에 균일한 간격 */
   justify-content: space-around;
@@ -149,7 +149,7 @@ header .icons .fa-search {
   margin: var(--padding) 0;
 }
 /* 액션 버튼 */
-.actions button {
+.info .actions button {
   display: flex;
   flex-direction: column;
   font-size: var(--font-small);
@@ -157,7 +157,7 @@ header .icons .fa-search {
 }
 
 /* 엑션버튼 안에 있는 i (아이콘) */
-.actions button i {
+.info .actions button i {
   /* 가로 중앙 정렬 */
   margin: 0 auto;
   /* 사칙연산 calc  */
@@ -166,14 +166,102 @@ header .icons .fa-search {
 }
 
 /* 로고중에 active되어있는 부분만 */
-.actions button i.active {
+.info .actions button i.active {
   color: var(--blue-color);
 }
 
 /* Channel Description */
-.channel {
+.info .channel {
   display: flex;
+  justify-content: space-between;
+  /* 실선(solid) */
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
 }
-.channel .metadata {
+.info .channel .metadata {
   display: flex;
+  align-items: center;
+}
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  /* 이미지 외곽을 동그라미로 */
+  border-radius: 50%;
+}
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+.info .channel .subscribe {
+  /* 영어일경우 다 대문자로 */
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+/* Up Next */
+.upNext {
+  /* 좌우 패딩 */
+  padding: 0 var(--padding);
+}
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.upNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+
+.upNext .item .img {
+  flex: 1 1 10%;
+  margin-right: var(--padding);
+}
+
+.upNext .item .img img {
+  width: 100%;
+}
+
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+
+.upNext .item .moreBtn {
+  flex: 1 1 5%;
+}
+
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .info .title {
+  font-size: var(--font-small);
+}
+
+.upNext .item .info .name,
+.upNext .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
 }
